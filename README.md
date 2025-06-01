@@ -16,11 +16,11 @@ Your project is live at:
 
 **[https://vercel.com/nips-projects-7e501d60/v0-personal-portfolio-website](https://vercel.com/nips-projects-7e501d60/v0-personal-portfolio-website)**
 
-## Build your app
+<!-- ## Build your app
 
 Continue building your app on:
 
-**[https://v0.dev/chat/projects/FMHMRbkS51N](https://v0.dev/chat/projects/FMHMRbkS51N)**
+**[https://v0.dev/chat/projects/FMHMRbkS51N](https://v0.dev/chat/projects/FMHMRbkS51N)** -->
 
 ## How It Works
 
