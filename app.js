@@ -21,14 +21,15 @@ app.get("/", (req, res) => {
     title: "Python/Django Developer",
     description: "I specialize in web development and data visualization, building robust and scalable applications.",
     location: "Nairobi, Kenya",
-    experience: "7+ Years",
-    email: "alvin.mwaniki@example.com",
+    experience: "5+ Years",
+    email: "mwanikialvin99@gmail.com  ",
     phone: "+254 123 456 789",
 
     skills: {
-      frontend: ["HTML5", "CSS3", "JavaScript", "React", "Next.js", "Tailwind CSS"],
-      backend: ["Python", "Django", "Flask", "Node.js", "Express.js", "APIs", "Selenium"],
-      database: ["PostgreSQL", "MySQL", "Git", "GitHub", "Beautiful Soup", "Matplotlib", "Plotly"],
+      frontend: ["HTML5", "CSS3", "JavaScript", "React", "BootStrap"],
+      backend: ["Python", "Django", "Flask", "Selenium", "Beautiful Soup", "Matplotlib", "Plotly", "Node.js", "Express.js", "APIs"],
+      database: ["PostgreSQL", "MySQL", "SQLAlchemy"],
+      collaboration: [, "Git", "GitHub",]
     },
 
     projects: [
