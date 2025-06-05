@@ -19,73 +19,92 @@ app.get("/", (req, res) => {
   const portfolioData = {
     name: "Alvin Mwaniki",
     title: "Python/Django Developer",
-    description: "I specialize in web development and data visualization, building robust and scalable applications.",
+    description:
+      "I specialize in web development and data visualization, building robust and scalable applications with Python, Django, and modern web technologies.",
     location: "Nairobi, Kenya",
-    experience: "5+ Years",
-    email: "mwanikialvin99@gmail.com  ",
+    experience: "7+ Years",
+    email: "alvin.mwaniki@example.com",
     phone: "+254 123 456 789",
+    github: "https://github.com/nipsalvin",
+    linkedin: "https://linkedin.com/in/alvin-mwaniki",
 
     skills: {
-      frontend: ["HTML5", "CSS3", "JavaScript", "React", "BootStrap"],
-      backend: ["Python", "Django", "Flask", "Selenium", "Beautiful Soup", "Matplotlib", "Plotly", "Node.js", "Express.js", "APIs"],
-      database: ["PostgreSQL", "MySQL", "SQLAlchemy"],
-      collaboration: [, "Git", "GitHub",]
+      frontend: ["HTML5", "CSS3", "JavaScript", "React", "Next.js", "Tailwind CSS"],
+      backend: ["Python", "Django", "Flask", "Node.js", "Express.js", "APIs", "Selenium"],
+      database: ["PostgreSQL", "MySQL", "Git", "GitHub", "Beautiful Soup", "Matplotlib", "Plotly"],
     },
 
     projects: [
       {
         title: "Django E-commerce API",
         description:
-          "A RESTful API built with Django REST Framework for an e-commerce platform. Includes user authentication, product management, and order processing.",
-        technologies: ["Python", "Django", "DRF", "PostgreSQL"],
-        github: "https://github.com",
-        demo: "https://demo.com",
-        image: "/images/project1.jpg",
+          "A comprehensive RESTful API built with Django REST Framework for an e-commerce platform. Features include user authentication, product management, order processing, and payment integration.",
+        technologies: ["Python", "Django", "DRF", "PostgreSQL", "Redis"],
+        github: "https://github.com/nipsalvin/django-ecommerce-api",
+        demo: "https://django-ecommerce-demo.herokuapp.com",
+        image: "/images/django-ecommerce.jpg",
       },
       {
         title: "Web Scraper with Beautiful Soup",
         description:
-          "A Python script that scrapes data from websites using Beautiful Soup and requests. Data is cleaned and stored in a CSV file.",
-        technologies: ["Python", "Beautiful Soup", "Requests", "CSV"],
-        github: "https://github.com",
-        demo: "https://demo.com",
-        image: "/images/project2.jpg",
+          "An intelligent web scraping tool that extracts data from multiple websites using Beautiful Soup and requests. Includes data cleaning, validation, and export to various formats.",
+        technologies: ["Python", "Beautiful Soup", "Requests", "Pandas", "CSV"],
+        github: "https://github.com/nipsalvin/web-scraper",
+        demo: "https://web-scraper-demo.herokuapp.com",
+        image: "/images/web-scraper.jpg",
       },
       {
         title: "Data Visualization Dashboard",
         description:
-          "A dashboard created with Flask and Plotly to visualize data from various sources. Interactive charts and graphs provide insights into key metrics.",
-        technologies: ["Python", "Flask", "Plotly", "HTML/CSS"],
-        github: "https://github.com",
-        demo: "https://demo.com",
-        image: "/images/project3.jpg",
+          "An interactive dashboard built with Flask and Plotly for visualizing complex datasets. Features real-time data updates, multiple chart types, and export capabilities.",
+        technologies: ["Python", "Flask", "Plotly", "Pandas", "SQLAlchemy"],
+        github: "https://github.com/nipsalvin/data-dashboard",
+        demo: "https://data-viz-dashboard.herokuapp.com",
+        image: "/images/data-dashboard.jpg",
+      },
+      {
+        title: "Automated Testing Suite",
+        description:
+          "A comprehensive testing framework using Selenium for automated web application testing. Includes cross-browser testing, reporting, and CI/CD integration.",
+        technologies: ["Python", "Selenium", "Pytest", "Docker", "Jenkins"],
+        github: "https://github.com/nipsalvin/selenium-testing",
+        demo: "https://testing-suite-demo.herokuapp.com",
+        image: "/images/testing-suite.jpg",
       },
     ],
 
     experience: [
       {
-        title: "Senior Software Engineer",
-        company: "Acme Corp",
+        title: "Senior Python Developer",
+        company: "TechCorp Kenya",
         period: "2023 - Present",
         description:
-          "Leading the development of scalable backend systems using Python and Django. Responsible for designing and implementing RESTful APIs and improving system performance.",
-        technologies: ["Python", "Django", "PostgreSQL", "AWS", "Docker"],
+          "Leading the development of scalable backend systems using Python and Django. Responsible for designing and implementing RESTful APIs, database optimization, and improving system performance by 40%.",
+        technologies: ["Python", "Django", "PostgreSQL", "AWS", "Docker", "Redis"],
       },
       {
-        title: "Software Engineer",
-        company: "Beta Industries",
+        title: "Full Stack Developer",
+        company: "Digital Solutions Ltd",
         period: "2021 - 2023",
         description:
-          "Developed and maintained web applications using React and Node.js. Implemented unit and integration tests to ensure code quality.",
-        technologies: ["React", "Node.js", "JavaScript", "TypeScript", "Jest"],
+          "Developed and maintained web applications using Django and React. Implemented automated testing pipelines and reduced deployment time by 60% through CI/CD optimization.",
+        technologies: ["Python", "Django", "React", "PostgreSQL", "Docker", "Jenkins"],
       },
       {
         title: "Backend Developer",
-        company: "Gamma Solutions",
+        company: "StartupHub Nairobi",
         period: "2019 - 2021",
         description:
-          "Built and maintained RESTful APIs using Python and Flask. Worked with relational databases such as MySQL and PostgreSQL.",
-        technologies: ["Python", "Flask", "MySQL", "PostgreSQL", "REST APIs"],
+          "Built and maintained RESTful APIs using Python and Flask. Worked extensively with data scraping, processing, and visualization using Beautiful Soup and Matplotlib.",
+        technologies: ["Python", "Flask", "MySQL", "Beautiful Soup", "Matplotlib", "REST APIs"],
+      },
+      {
+        title: "Junior Developer",
+        company: "CodeCraft Solutions",
+        period: "2017 - 2019",
+        description:
+          "Started career developing web applications and learning Python. Gained experience in database design, API development, and automated testing with Selenium.",
+        technologies: ["Python", "HTML/CSS", "JavaScript", "MySQL", "Selenium"],
       },
     ],
   }
@@ -97,10 +116,26 @@ app.get("/", (req, res) => {
 app.post("/contact", (req, res) => {
   const { name, email, message } = req.body
 
-  // Here you would typically save to database or send email
-  console.log("Contact form submission:", { name, email, message })
+  // Validate input
+  if (!name || !email || !message) {
+    return res.status(400).json({
+      success: false,
+      message: "All fields are required.",
+    })
+  }
 
-  res.json({ success: true, message: "Thank you for your message! I will get back to you soon." })
+  // Here you would typically save to database or send email
+  console.log("Contact form submission:", {
+    name,
+    email,
+    message,
+    timestamp: new Date().toISOString(),
+  })
+
+  res.json({
+    success: true,
+    message: "Thank you for your message! I will get back to you soon.",
+  })
 })
 
 // API endpoint for theme toggle
@@ -110,6 +145,24 @@ app.post("/api/theme", (req, res) => {
   res.json({ success: true, theme })
 })
 
+// 404 handler
+app.use((req, res) => {
+  res.status(404).render("404", {
+    title: "Page Not Found",
+    message: "The page you're looking for doesn't exist.",
+  })
+})
+
+// Error handler
+app.use((err, req, res, next) => {
+  console.error(err.stack)
+  res.status(500).render("500", {
+    title: "Server Error",
+    message: "Something went wrong on our end.",
+  })
+})
+
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`)
+  console.log(`🚀 Server running on port ${PORT}`)
+  console.log(`📱 Local: http://localhost:${PORT}`)
 })
