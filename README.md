@@ -14,7 +14,7 @@ Any changes you make to your deployed app will be automatically pushed to this r
 
 Your project is live at:
 
-**[https://vercel.com/nips-projects-7e501d60/v0-personal-portfolio-website](https://vercel.com/nips-projects-7e501d60/v0-personal-portfolio-website)**
+<!--**[https://vercel.com/nips-projects-7e501d60/v0-personal-portfolio-website](https://vercel.com/nips-projects-7e501d60/v0-personal-portfolio-website)** -->
 
 <!-- ## Build your app
 
